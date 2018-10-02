@@ -67,12 +67,19 @@ public class TicTacToeActivity extends AppCompatActivity implements Contract.Tic
     public void clearBoard() {
         for( int i = 0; i < mBoardLayout.getChildCount(); i++ ) {
             ((Button) mBoardLayout.getChildAt(i)).setText("");
+            ((Button) mBoardLayout.getChildAt(i)).setEnabled(true);
+
         }
     }
 
     @Override
     public void updateUI() {
 
+    }
+
+    @Override
+    public void hideWinnerMsg() {
+        mWinnerLayout.setVisibility(View.INVISIBLE);
     }
 
     private void attachPresenter(){
@@ -92,5 +99,10 @@ public class TicTacToeActivity extends AppCompatActivity implements Contract.Tic
     protected void onDestroy() {
         mPresenter.detachView();
         super.onDestroy();
+    }
+
+    public void onRestartButtonClick(View view) {
+        Button restartBtn = (Button) view;
+        mPresenter.onNewGame();
     }
 }

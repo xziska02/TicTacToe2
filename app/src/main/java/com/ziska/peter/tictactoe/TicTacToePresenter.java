@@ -36,6 +36,7 @@ public class TicTacToePresenter implements Contract.TicTacToePresenterInt {
     public void onNewGame() {
         mGame.restartGame();
         mView.clearBoard();
+        mView.hideWinnerMsg();
     }
 
     @Override

@@ -24,15 +24,6 @@ public class Game {
         mGameMoves = 0;
     }
 
-    private void GameReset(){
-        for (int col = 0; col < 3; col++){
-            for (int row = 0; row < 3; row++){
-                mBoard[col][row] = null;
-            }
-        }
-        mWinner = null;
-        mGameMoves = 0;
-    }
 
     public boolean hasGameEnd(){
         if (hasThreeSameHorizontalCells() || hasThreeSameVerticalCells() || hasThreeSameDiagonalCells()) {
@@ -130,7 +121,7 @@ public class Game {
     }
 
     public void restartGame(){
-        GameReset();
+        GameInit();
     }
 
     public PlayerBadge getCellBadge(int row, int col){

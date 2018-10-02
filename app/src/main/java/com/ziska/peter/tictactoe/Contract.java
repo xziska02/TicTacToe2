@@ -9,6 +9,7 @@ public interface Contract {
         void changeCellBadge(int row,int col,PlayerBadge cellBadge);
         void clearBoard();
         void updateUI();
+        void hideWinnerMsg();
 
     }
     interface TicTacToePresenterInt{
